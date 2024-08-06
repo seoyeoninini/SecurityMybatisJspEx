@@ -1,0 +1,146 @@
+﻿@charset "UTF-8";
+
+/* 스크롤바 없애기 */
+html {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+* { padding: 0; margin: 0; }
+*, *::after, *::before { box-sizing: border-box; }
+
+body { font-size: 14px; font-family: "Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif; }
+
+a { text-decoration: none; color: #333; }
+a:hover, a:active{ text-decoration: underline; cursor: pointer; color: #F28011; }
+
+textarea:focus, input:focus { outline: none; }
+
+.border-top1 { border-top: 1px solid #212529; }
+.border-top2 { border-top: 2px solid #212529; }
+.border-bottom1 { border-bottom: 1px solid #212529; }
+.border-bottom2 { border-bottom: 2px solid #212529; }
+
+@media (min-width: 576px) {
+	body, .fixed-top {
+	    max-width: 540px;
+	}
+}
+
+@media (min-width: 768px) {
+	body, .fixed-top {
+	    max-width: 720px;
+	}
+}
+
+header nav {
+	background: #ffffff;
+}
+header nav>ul {
+	list-style: none;
+	display: flex;
+	flex-wrap : nowrap;
+	align-items: center;
+	/* justify-content: center; */
+	overflow-x: scroll;
+	padding-left: 0;
+	margin-bottom: 1px;
+}
+
+/* 스크롤바 없애기 */
+header nav>ul {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+header nav>ul::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+header nav>ul>li>span {
+	display: block;
+	text-decoration: none;
+	padding: 7px 12px 2px;
+	white-space:nowrap;
+	cursor: pointer; 
+}
+header nav>ul>li>span:hover {
+	text-decoration: none;
+	color: #0d6efd;
+}
+
+header nav>ul>li>span.active {
+	font-weight: 600;
+	color: #dc3545;
+	text-decoration: underline;
+	text-underline-offset: 7px;
+}
+
+header nav {
+	border-bottom: 1px solid #ccc;	
+}
+
+.body-container {
+    clear:both;
+    margin: 0 auto 10px;
+    padding-top: 20px;
+}
+
+.body-title {
+    color: #424951;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin: 0 0 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+.body-title h3 {
+    font-size: 23px;
+    min-width: 300px;
+    font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
+    font-weight: bold;
+    margin: 0 0 -5px 0;
+    padding-bottom: 5px;
+    display: inline-block;
+    border-bottom: 3px solid #424951;
+}
+
+/* 페이징 */
+.page-navigation {
+	clear: both;
+	padding: 20px 0;
+	text-align: center;
+}
+
+/* AJAX loading */
+.loader {
+  border: 17px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 17px solid blue;
+  border-right: 17px solid green;
+  border-bottom: 17px solid red;
+  border-left: 17px solid pink;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 상단 고정 */
+.fixed-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}

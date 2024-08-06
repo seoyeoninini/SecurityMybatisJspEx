@@ -1,0 +1,18 @@
+server:
+  port: 9091
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    # url: jdbc:oracle:thin:@//127.0.0.1:1521/xe
+    url: jdbc:log4jdbc:oracle:thin:@//127.0.0.1:1521/xe		
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy		
+    hikari:
+      username: blue
+      password: java$!
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/**/*.xml
